@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+<form method="post" action="{% url 'employee_update' form.instance.id %}" class="js-employee-update-form">
+  {% csrf_token %}
+  <div class="modal-header">
+    <h4 class="modal-title">Update Employee Information</h4>
+  </div>
+  <div class="modal-body">
+  {{form|crispy}}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Update employee</button>
+  </div>
+</form>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- BUTTON TO TRIGGER THE ACTION -->
+  <p>
+    <button type="button" class="btn btn-primary js-create-employee" data-url="{% url 'employee_create' %}">
+      <span class="glyphicon glyphicon-plus"></span>
+      New Employee
+    </button>
+  </p>
+
+  <h1 class="page-header">Employee List</h1>
+  <table class="table" id="employee-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% include 'partial_employee_list.html' %}
+    </tbody>
+  </table>
+
+  
+  <!-- THE MODAL WE WILL BE USING -->
+    <div class="modal fade" id="modal-employee">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock javascript %}
