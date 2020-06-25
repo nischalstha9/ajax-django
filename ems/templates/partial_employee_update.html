@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 
 <form method="post" action="{% url 'employee_update' form.instance.id %}" class="js-employee-update-form">
   {% csrf_token %}
@@ -6,7 +6,7 @@
     <h4 class="modal-title">Update Employee Information</h4>
   </div>
   <div class="modal-body">
-  {{form|crispy}}
+  {% include 'book_form.html' %}
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
